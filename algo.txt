@@ -1,0 +1,68 @@
+# BIENVENU DANS LE PROGRAMME EXPERT 
+# le commenceement de la logique BACK-END
+#lire listeplainte
+
+tabSimptome=[Symptome malade]
+
+k=[valeur de precision].
+
+si k==1 alors
+    
+    la precision est forte
+
+    faire
+
+    return maladie.symptome==tabSimptome 
+
+sinon si k==2 alors
+
+    la precision est ne pas forte, il faut raprocher les entre(Symptome Envoyé) et sortie (resultat généré)
+
+    # on va boucle la liste de symptome envoyée
+
+    Pour i = 0 à len(tabSimptome-1) faire:
+
+        # on va  segmenter chaque mot de la liste en deux pour faire encore la recherche de sous mot dans notre source de donnne
+
+        sous=tabSimptome[i]
+
+        # on extrait le mot en 2 sous-mot de chaque symptome de la liste
+
+        longueur=len(sous) # on a sa longueur 
+
+        mid=longueur//2 # on fait la division entiere pour avoir son milieu
+
+        sous1=sous[0:mid] # on extrait le premier mot  extrait
+        sous2=sous[mid:len(sous)-1] # on extrait le deuxieme mot extrait  
+
+        # on les envois pour la rercherhe
+
+        selectSymptome(sous1,sous2)      
+
+    return maladie.symptome==tabSimptome   
+
+# le commenceement de la logique FRONT-END
+
+lire precision
+
+listeplainte=[plainte,precision]
+
+data=recherchePlainte(listeplainte) # on donne ànune route API
+
+rep=data.json()
+
+si rep:
+    # veut dire les donnee trouve
+
+    afficherMaladie
+
+sinon:
+
+    lire voulez-vous l'inserer ?
+
+    si oui:
+
+        MethodeCreate(data)
+    sinon:
+
+        bye!

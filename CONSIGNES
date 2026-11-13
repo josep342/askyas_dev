@@ -1,0 +1,5 @@
+CONSIGNES
+
+si status =1:element opertionnel
+si status=2: element supprimer
+si status=0: element modifier
